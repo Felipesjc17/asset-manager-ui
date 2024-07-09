@@ -1,9 +1,0 @@
-{
-  "menu": {
-    "simulator": "Simulador Juros Compostos",
-    "assetManager": "Gerenciador de Ativos"
-  },
-  "compoundInterest": {
-    "title": "Simulador Juros Compostos"
-  }
-}

@@ -4,7 +4,7 @@ import enUs from './translations/enUs.json'
 
 export default createI18n({
   locale: navigator.language,
-  fallbackLocale: navigator.language,
+  legacy: false,
   messages: {
     pt: ptBr,
     en: enUs

@@ -1,0 +1,22 @@
+{
+  "menu": {
+    "simulator": "Simulator",
+    "assetManager": "Asset Manager"
+  },
+  "compoundInterest": {
+    "title": "Compound Interest Simulator",
+    "filters": {
+      "periodMonths": "Período em meses",
+      "initialValue": "Valor inicial",
+      "coin": "R$",
+      "monthlyContribution": "Aporte mensal",
+      "correctContributionInflation": "Corrigir aporte pela inflação",
+      "yield": "Rendimento",
+      "administration": "Administração",
+      "inflation": "Inflação",
+      "monthly": "Mensal",
+      "yearly": "Yearly",
+      "card": "Digite seus dados"
+    }
+  }
+}

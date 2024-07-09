@@ -1,25 +1,19 @@
 <template>
-  <div>
+  <nav>
     <BNavbar toggleable="sm" variant="secondary" v-b-color-mode="'dark'">
       <BNavbarToggle target="nav-text-collapse" />
-      <RouterLink to="/">
-        <BNavbarBrand>
-          {{ $t('menu.assetManager') }}
-        </BNavbarBrand>
-      </RouterLink>
 
       <BCollapse id="nav-text-collapse" is-nav>
         <BNavbarNav>
-          <RouterLink to="compound-interest">
-            <BNavText>
-              {{ $t('menu.simulator') }}
-            </BNavText>
-          </RouterLink>
+          <BNavItem tag="h1" href="/"> Home </BNavItem>
+          <BNavItem href="/compound-interest">
+            {{ $t('menu.simulator') }}
+          </BNavItem>
         </BNavbarNav>
       </BCollapse>
     </BNavbar>
-  </div>
-  <div>
+  </nav>
+  <div class="py-4 px-4">
     <router-view />
   </div>
 </template>
