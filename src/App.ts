@@ -1,13 +1,27 @@
-import { BNavbar, BNavbarToggle, BCollapse, BNavbarNav, BNavText } from 'bootstrap-vue-next'
-import { defineComponent } from 'vue'
+import { defineComponent, ref, watch } from 'vue'
+import router from './router'
+import Menu from './models/menu/Menu'
 
 export default defineComponent({
   name: 'App',
-  components: {
-    BNavbar,
-    BNavbarToggle,
-    BCollapse,
-    BNavbarNav,
-    BNavText
+  setup() {
+    const menu = ref(Menu)
+
+    const $router = ref(router)
+
+    watch(
+      $router,
+      (val) => {
+        menu.value.forEach((item) => {
+          item.active = item.link === val.currentRoute.path
+        })
+      },
+      { deep: true }
+    )
+
+    return {
+      menu,
+      router
+    }
   }
 })

@@ -1,14 +1,16 @@
 import { defineComponent, reactive, ref, nextTick } from 'vue'
 import './CompoundInterest.scss'
 import { useI18n } from 'vue-i18n'
-import Filter from './components/filter/Filter.vue'
-import Table from './components/table/Table.vue'
+import FilterCompoundInterest from './components/filter/FilterCompoundInterest.vue'
+import ChartCompoundInterest from './components/chart/ChartCompoundInterest.vue'
+import TableCompoundInterest from './components/table/TableCompoundInterest.vue'
 import CompoundInterestService from './CompoundInterest.service'
 export default defineComponent({
   name: 'compound-interest',
   components: {
-    [Filter.name as string]: Filter,
-    [Table.name as string]: Table
+    [FilterCompoundInterest.name as string]: FilterCompoundInterest,
+    [TableCompoundInterest.name as string]: TableCompoundInterest,
+    [ChartCompoundInterest.name as string]: ChartCompoundInterest
   },
   setup() {
     const { t } = useI18n()

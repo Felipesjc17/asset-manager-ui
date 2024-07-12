@@ -1,6 +1,7 @@
 {
   "menu": {
-    "simulator": "Simulador",
+    "home": "Home",
+    "simulator": "Simulador de Juros Compostos",
     "assetManager": "Gerenciador de Ativos"
   },
   "compoundInterest": {
@@ -20,6 +21,23 @@
       "simulate": "Simular",
       "reset": "Limpar Dados",
       "desiredIncome": "Renda Mensal Desejada"
+    },
+    "table": {
+      "month": "Mês",
+      "initialValue": "Valor inicial (R$)",
+      "yield": "Rendimento (R$)",
+      "desiredIncome": "Renda Desejada Ajustada (R$)",
+      "administration": "Administração (R$)",
+      "inflation": "Inflação (R$)",
+      "monthlyContribution": "Aporte (R$)",
+      "finalValue": "Valor Final (R$) ",
+      "totalMonth": "Total em {value} meses",
+      "accumulatedIncome": "Rendimento acumulado (R$)",
+      "accumulatedDesiredIncome": "Renda Desejada acumulada (R$)",
+      "accumulatedAdministration": "Administração acumulada (R$)",
+      "accumulatedInflation": "Inflação acumulada (R$)",
+      "accumulatedMonthlyContribution": "Aporte acumulado (R$)",
+      "accumulatedTotal": "Total Acumulado (R$) "
     }
   }
 }

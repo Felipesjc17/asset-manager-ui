@@ -5,9 +5,13 @@
 
       <BCollapse id="nav-text-collapse" is-nav>
         <BNavbarNav>
-          <BNavItem tag="h1" href="/"> Home </BNavItem>
-          <BNavItem href="/compound-interest">
-            {{ $t('menu.simulator') }}
+          <BNavItem
+            v-for="(menu, index) in menu"
+            :key="index"
+            :href="menu.link"
+            :active="menu.active"
+          >
+            {{ $t(menu.name) }}
           </BNavItem>
         </BNavbarNav>
       </BCollapse>

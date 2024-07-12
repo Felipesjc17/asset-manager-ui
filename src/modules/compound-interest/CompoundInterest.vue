@@ -1,6 +1,6 @@
 <template>
   <div class="compound-interest">
-    <header class="d-flex justify-content-around">
+    <header class="d-flex justify-content-around" variant="secundary">
       <h4>{{ $t('compoundInterest.title') }}</h4>
     </header>
     <filter-compound-interest
@@ -9,10 +9,8 @@
       @simulate="onSubmit"
       @reset-form="onReset"
     />
+    <chart-compound-interest />
     <table-compound-interest :data="data" />
-    <BCard class="mt-3" header="Form Data Result">
-      <pre class="m-0">{{ form }}</pre>
-    </BCard>
   </div>
 </template>
 

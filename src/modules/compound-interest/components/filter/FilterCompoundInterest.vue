@@ -175,4 +175,4 @@
     </BForm>
   </BCard>
 </template>
-<script lang="ts" src="./Filter.ts" />
+<script lang="ts" src="./FilterCompoundInterest.ts" />
