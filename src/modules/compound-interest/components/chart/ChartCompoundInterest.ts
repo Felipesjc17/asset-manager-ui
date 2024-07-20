@@ -17,25 +17,9 @@ export default defineComponent({
   components: {
     Line
   },
+  props: { data: { type: Object, required: true } },
   data() {
     return {
-      data: {
-        labels: ['Mês 0', '1', '2', '3', '4', '5', '6'],
-        datasets: [
-          {
-            label: 'Data One',
-            backgroundColor: '#f87979',
-            id: 'line',
-            data: [40, 39, 10, 40, 39, 80, 40]
-          },
-          {
-            label: 'Data two',
-            backgroundColor: '#55555',
-            data: [100, 509, 10, 40, 39, 80, 40]
-          }
-        ]
-      },
-
       options: {
         responsive: true,
         maintainAspectRatio: false,

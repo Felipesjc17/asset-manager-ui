@@ -1,5 +1,5 @@
 <template>
-  <BCard lg="5" class="filters mt-3" :header="$t('compoundInterest.filters.card')">
+  <BCard lg="5" class="filters mt-3">
     <BForm @submit="onSubmit" @reset="onReset" v-if="show">
       <BRow class="mb-2 b-row">
         <BCol lg="2">

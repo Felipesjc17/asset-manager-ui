@@ -57,12 +57,14 @@ export default defineComponent({
       })
     }
 
-    const data = CompoundInterestService
+    const dataTable = CompoundInterestService.dataTable
+    const dataChart = CompoundInterestService.dataChart
 
     return {
       form,
       show,
-      data,
+      dataChart,
+      dataTable,
       onSubmit,
       onReset,
       t
