@@ -27,26 +27,24 @@
       </BTbody>
       <BTfoot>
         <BTr variant="secondary">
-          <BTh></BTh>
-          <BTh>{{
-            $t(`${translationPath}.totalMonth`, { value: data.simulatedData?.length.toString() })
-          }}</BTh>
-          <BTh>{{ $t(`${translationPath}.accumulatedIncome`) }}</BTh>
-          <BTh>{{ $t(`${translationPath}.accumulatedDesiredIncome`) }}</BTh>
-          <BTh>{{ $t(`${translationPath}.accumulatedAdministration`) }}</BTh>
-          <BTh>{{ $t(`${translationPath}.accumulatedInflation`) }}</BTh>
-          <BTh>{{ $t(`${translationPath}.accumulatedMonthlyContribution`) }}</BTh>
-          <BTh>{{ $t(`${translationPath}.accumulatedTotal`) }}</BTh>
+          <BTh class="text-end">{{ $t(`${translationPath}.totalMonth`) }}</BTh>
+          <BTh class="text-end">{{ $t(`${translationPath}.totalYears`) }}</BTh>
+          <BTh class="text-end">{{ $t(`${translationPath}.accumulatedIncome`) }}</BTh>
+          <BTh class="text-end">{{ $t(`${translationPath}.accumulatedDesiredIncome`) }}</BTh>
+          <BTh class="text-end">{{ $t(`${translationPath}.accumulatedAdministration`) }}</BTh>
+          <BTh class="text-end">{{ $t(`${translationPath}.accumulatedInflation`) }}</BTh>
+          <BTh class="text-end">{{ $t(`${translationPath}.accumulatedMonthlyContribution`) }}</BTh>
+          <BTh class="text-end">{{ $t(`${translationPath}.accumulatedTotal`) }}</BTh>
         </BTr>
         <BTr variant="light">
-          <BTd></BTd>
-          <BTd>{{ data.simulatedDataFinal.totalMonth }}</BTd>
-          <BTd>{{ data.simulatedDataFinal.accumulatedIncome }}</BTd>
-          <BTd>{{ data.simulatedDataFinal.accumulatedDesiredIncome }}</BTd>
-          <BTd>{{ data.simulatedDataFinal.accumulatedAdministration }}</BTd>
-          <BTd>{{ data.simulatedDataFinal.accumulatedInflation }}</BTd>
-          <BTd>{{ data.simulatedDataFinal.accumulatedMonthlyContribution }}</BTd>
-          <BTd>{{ data.simulatedDataFinal.accumulatedTotal }}</BTd>
+          <BTd class="text-end">{{ data.simulatedDataFinal.totalMonth }}</BTd>
+          <BTd class="text-end">{{ data.simulatedDataFinal.totalYears }}</BTd>
+          <BTd class="text-end">{{ data.simulatedDataFinal.accumulatedIncome }}</BTd>
+          <BTd class="text-end">{{ data.simulatedDataFinal.accumulatedDesiredIncome }}</BTd>
+          <BTd class="text-end">{{ data.simulatedDataFinal.accumulatedAdministration }}</BTd>
+          <BTd class="text-end">{{ data.simulatedDataFinal.accumulatedInflation }}</BTd>
+          <BTd class="text-end">{{ data.simulatedDataFinal.accumulatedMonthlyContribution }}</BTd>
+          <BTd class="text-end">{{ data.simulatedDataFinal.accumulatedTotal }}</BTd>
         </BTr>
       </BTfoot>
     </BTableSimple>

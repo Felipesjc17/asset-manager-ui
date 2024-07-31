@@ -7,7 +7,8 @@
   "compoundInterest": {
     "title": "Simulador de Juros Compostos",
     "chart": {
-      "title": "Gráfico Rendimento x Renda ajustada de acordo com a inflação"
+      "title": "Gráfico Rendimento x Renda ajustada de acordo com a inflação",
+      "month": "Mês"
     },
     "filters": {
       "periodMonths": "Período em meses",
@@ -35,7 +36,8 @@
       "inflation": "Inflação (R$)",
       "monthlyContribution": "Aporte (R$)",
       "finalValue": "Valor Final (R$) ",
-      "totalMonth": "Total em {value} meses",
+      "totalMonth": "Meses",
+      "totalYears": "Anos",
       "accumulatedIncome": "Rendimento acumulado (R$)",
       "accumulatedDesiredIncome": "Renda Desejada acumulada (R$)",
       "accumulatedAdministration": "Administração acumulada (R$)",

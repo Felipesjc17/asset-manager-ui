@@ -1,10 +1,20 @@
-import { defineComponent, reactive, ref, nextTick } from 'vue'
+import { defineComponent, reactive, ref, nextTick, computed } from 'vue'
 import './CompoundInterest.scss'
 import { useI18n } from 'vue-i18n'
 import FilterCompoundInterest from './components/filter/FilterCompoundInterest.vue'
 import ChartCompoundInterest from './components/chart/ChartCompoundInterest.vue'
 import TableCompoundInterest from './components/table/TableCompoundInterest.vue'
 import CompoundInterestService from './CompoundInterest.service'
+
+interface DataTable {
+  simulatedData: object
+  simulatedDataFinal: object
+}
+
+interface DataLines {
+  valueWithIncome: number[]
+  desiredIncome: number[]
+}
 export default defineComponent({
   name: 'compound-interest',
   components: {
@@ -16,28 +26,42 @@ export default defineComponent({
     const { t } = useI18n()
 
     const form = reactive({
-      periodMonths: '',
-      initialValue: '',
-      monthlyContribution: '',
+      periodMonths: '10',
+      initialValue: '100',
+      monthlyContribution: '100',
       correctContributionInflation: false,
+      desiredIncome: '1000',
       yield: {
-        value: '',
-        period: 'MONTHLY'
+        value: '5',
+        type: 'MONTHLY'
       },
       administration: {
-        value: '',
-        period: 'MONTHLY'
+        value: '1',
+        type: 'MONTHLY'
       },
       inflation: {
-        value: '',
-        period: 'MONTHLY'
+        value: '1',
+        type: 'MONTHLY'
       }
     })
     const show = ref(true)
 
-    const onSubmit = () => {
-      // event.preventDefault()
-      alert(JSON.stringify(form))
+    const dataTable = ref<null | DataTable>(null)
+    const dataChart = ref<null | DataLines>(null)
+
+    const onSubmit = async () => {
+      event?.preventDefault()
+      await CompoundInterestService.getDataService(form).then((data) => {
+        dataTable.value = {
+          simulatedData: data.dataTable,
+          simulatedDataFinal: data.dataTableFinal
+        }
+
+        dataChart.value = {
+          valueWithIncome: data.dataChart?.valueWithIncome,
+          desiredIncome: data.dataChart?.desiredIncome
+        }
+      })
     }
 
     const onReset = () => {
@@ -45,9 +69,10 @@ export default defineComponent({
       form.initialValue = ''
       form.monthlyContribution = ''
       form.correctContributionInflation = false
-      form.yield = { value: '', period: 'MONTHLY' }
-      form.administration = { value: '', period: 'MONTHLY' }
-      form.inflation = { value: '', period: 'MONTHLY' }
+      form.desiredIncome = ''
+      form.yield = { value: '', type: 'MONTHLY' }
+      form.administration = { value: '', type: 'MONTHLY' }
+      form.inflation = { value: '', type: 'MONTHLY' }
 
       // Trick to reset/clear native browser form validation state
       show.value = false
@@ -57,8 +82,13 @@ export default defineComponent({
       })
     }
 
-    const dataTable = CompoundInterestService.dataTable
-    const dataChart = CompoundInterestService.dataChart
+    const visibleChart = computed(() => {
+      return dataChart.value !== null
+    })
+
+    const visibleTable = computed(() => {
+      return dataTable.value !== null
+    })
 
     return {
       form,
@@ -67,7 +97,8 @@ export default defineComponent({
       dataTable,
       onSubmit,
       onReset,
-      t
+      visibleChart,
+      visibleTable
     }
   }
 })

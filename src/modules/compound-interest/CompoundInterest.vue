@@ -12,12 +12,12 @@
       <BAccordionItem
         :title="$t('compoundInterest.chart.title')"
         class="h-100"
-        :visible="dataChart"
+        :visible="visibleChart"
       >
-        <chart-compound-interest :data="dataChart" />
+        <chart-compound-interest v-if="visibleChart" :data="dataChart" />
       </BAccordionItem>
-      <BAccordionItem :title="$t('compoundInterest.table.title')" :visible="dataTable">
-        <table-compound-interest :data="dataTable" />
+      <BAccordionItem :title="$t('compoundInterest.table.title')" :visible="visibleTable">
+        <table-compound-interest v-if="visibleTable" :data="dataTable" />
       </BAccordionItem>
     </BAccordion>
   </div>

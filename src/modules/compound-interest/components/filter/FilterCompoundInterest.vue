@@ -8,13 +8,14 @@
             :label="$t('compoundInterest.filters.periodMonths')"
             label-for="input-1"
           >
-            <BInputGroup size="sm" :prepend="$t('compoundInterest.filters.coin')" append=".00">
+            <BInputGroup size="sm">
               <BFormInput
                 id="input-1"
                 v-model="form.periodMonths"
                 type="number"
                 placeholder="0"
                 required
+                max="1000"
                 min="0"
               />
             </BInputGroup>
@@ -89,7 +90,7 @@
             :label="$t('compoundInterest.filters.yield')"
             label-for="input-yield"
           >
-            <BInputGroup size="sm" :prepend="$t('compoundInterest.filters.coin')" append=".00">
+            <BInputGroup size="sm" :prepend="$t('compoundInterest.filters.coin')" append="%">
               <BFormInput
                 id="input-yield"
                 v-model="form.yield.value"
@@ -105,7 +106,7 @@
           <BFormRadioGroup
             size="sm"
             button-variant="outline-secondary"
-            v-model="form.yield.period"
+            v-model="form.yield.type"
             :options="optionsPeriod"
             name="radios-btn-yield"
             buttons
@@ -117,7 +118,7 @@
             :label="$t('compoundInterest.filters.administration')"
             label-for="input-administration"
           >
-            <BInputGroup size="sm" :prepend="$t('compoundInterest.filters.coin')" append=".00">
+            <BInputGroup size="sm" :prepend="$t('compoundInterest.filters.coin')" append="%">
               <BFormInput
                 id="input-administration"
                 v-model="form.administration.value"
@@ -132,7 +133,7 @@
           <BFormRadioGroup
             size="sm"
             button-variant="outline-secondary"
-            v-model="form.administration.period"
+            v-model="form.administration.type"
             :options="optionsPeriod"
             name="radios-btn-administration"
             buttons
@@ -144,7 +145,7 @@
             :label="$t('compoundInterest.filters.inflation')"
             label-for="input-inflation"
           >
-            <BInputGroup size="sm" :prepend="$t('compoundInterest.filters.coin')" append=".00">
+            <BInputGroup size="sm" :prepend="$t('compoundInterest.filters.coin')" append="%">
               <BFormInput
                 id="input-inflation"
                 v-model="form.inflation.value"
@@ -159,7 +160,7 @@
           <BFormRadioGroup
             size="sm"
             button-variant="outline-secondary"
-            v-model="form.inflation.period"
+            v-model="form.inflation.type"
             :options="optionsPeriod"
             name="radios-btn-inflation"
             buttons
