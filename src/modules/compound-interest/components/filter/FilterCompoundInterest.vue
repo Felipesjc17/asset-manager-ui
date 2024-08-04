@@ -16,7 +16,7 @@
                 placeholder="0"
                 required
                 max="1000"
-                min="0"
+                min="0.00"
               />
             </BInputGroup>
           </BFormGroup>
@@ -34,7 +34,8 @@
                 type="number"
                 placeholder="0"
                 required
-                min="0"
+                max="100000000"
+                min="0.00"
               />
             </BInputGroup>
           </BFormGroup>
@@ -52,7 +53,8 @@
                 type="number"
                 placeholder="0"
                 required
-                min="0"
+                max="1000000000"
+                min="0.00"
               />
             </BInputGroup>
           </BFormGroup>
@@ -77,7 +79,8 @@
                 type="number"
                 placeholder="0"
                 required
-                min="0"
+                max="1000000000"
+                min="0.00"
               />
             </BInputGroup>
           </BFormGroup>
@@ -97,7 +100,8 @@
                 type="number"
                 placeholder="0"
                 required
-                min="0"
+                max="1000000"
+                min="0.00"
               />
             </BInputGroup>
           </BFormGroup>
@@ -124,7 +128,8 @@
                 v-model="form.administration.value"
                 type="number"
                 placeholder="0"
-                min="0"
+                max="100000000"
+                min="0.00"
               />
             </BInputGroup>
           </BFormGroup>
@@ -151,7 +156,8 @@
                 v-model="form.inflation.value"
                 type="number"
                 placeholder="0"
-                min="0"
+                max="100000000"
+                min="0.00"
               />
             </BInputGroup>
           </BFormGroup>
