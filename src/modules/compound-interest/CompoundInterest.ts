@@ -26,21 +26,21 @@ export default defineComponent({
     const { t } = useI18n()
 
     const form = reactive({
-      periodMonths: '10',
-      initialValue: '100',
-      monthlyContribution: '100',
+      periodMonths: '0',
+      initialValue: '0',
+      monthlyContribution: '0',
       correctContributionInflation: false,
-      desiredIncome: '1000',
+      desiredIncome: '0',
       yield: {
-        value: '5',
+        value: '0',
         type: 'MONTHLY'
       },
       administration: {
-        value: '1',
+        value: '0',
         type: 'MONTHLY'
       },
       inflation: {
-        value: '1',
+        value: '0',
         type: 'MONTHLY'
       }
     })

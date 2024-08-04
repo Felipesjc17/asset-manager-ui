@@ -6,7 +6,7 @@ class ApiService {
 
   constructor() {
     this.http = axios.create({
-      baseURL: 'http://localhost:8000/api',
+      baseURL: 'https://asset-manager-29uu.onrender.com/api',
       timeout: 1000,
       headers: { 'Content-Type': 'application/json' }
     })
