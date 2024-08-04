@@ -16,7 +16,7 @@
                 placeholder="0"
                 required
                 max="1000"
-                min="0.00"
+                min="1"
               />
             </BInputGroup>
           </BFormGroup>
@@ -35,7 +35,6 @@
                 placeholder="0"
                 required
                 max="100000000"
-                min="0.00"
               />
             </BInputGroup>
           </BFormGroup>
@@ -54,7 +53,6 @@
                 placeholder="0"
                 required
                 max="1000000000"
-                min="0.00"
               />
             </BInputGroup>
           </BFormGroup>
@@ -80,7 +78,6 @@
                 placeholder="0"
                 required
                 max="1000000000"
-                min="0.00"
               />
             </BInputGroup>
           </BFormGroup>
@@ -101,7 +98,6 @@
                 placeholder="0"
                 required
                 max="1000000"
-                min="0.00"
               />
             </BInputGroup>
           </BFormGroup>
@@ -129,7 +125,6 @@
                 type="number"
                 placeholder="0"
                 max="100000000"
-                min="0.00"
               />
             </BInputGroup>
           </BFormGroup>
@@ -157,7 +152,6 @@
                 type="number"
                 placeholder="0"
                 max="100000000"
-                min="0.00"
               />
             </BInputGroup>
           </BFormGroup>
