@@ -7,7 +7,7 @@ import { BootstrapVueNextResolver } from 'bootstrap-vue-next'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/asset-manager',
+  base: '/asset-manager-ui',
   plugins: [
     vue(),
     Components({
