@@ -1,3 +1,12 @@
+.compound-interest {
+  & > .loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 99999;
+  }
+}
+
 .b-form {
   border: 1px solid rgb(173, 170, 170);
   border-radius: 4px;

@@ -26,6 +26,11 @@
       "reset": "Limpar Dados",
       "desiredIncome": "Renda Mensal Desejada"
     },
+    "notification": {
+      "error": {
+        "fetch": "Erro ao simular, contate o administrador"
+      }
+    },
     "table": {
       "title": "Dados Simulados",
       "month": "Mês",

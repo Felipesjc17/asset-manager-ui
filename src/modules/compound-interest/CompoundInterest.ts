@@ -5,6 +5,7 @@ import FilterCompoundInterest from './components/filter/FilterCompoundInterest.v
 import ChartCompoundInterest from './components/chart/ChartCompoundInterest.vue'
 import TableCompoundInterest from './components/table/TableCompoundInterest.vue'
 import CompoundInterestService from './CompoundInterest.service'
+import { BAlert } from 'bootstrap-vue-next'
 
 interface DataTable {
   simulatedData: object
@@ -24,6 +25,9 @@ export default defineComponent({
   },
   setup() {
     const { t } = useI18n()
+
+    const alert = ref<typeof BAlert | null>(null)
+    const loading = ref(false)
 
     const form = reactive({
       periodMonths: '0',
@@ -48,20 +52,31 @@ export default defineComponent({
 
     const dataTable = ref<null | DataTable>(null)
     const dataChart = ref<null | DataLines>(null)
+    const notification = ref<null | string>(null)
+    const chart = ref<null | typeof ChartCompoundInterest>(null)
 
     const onSubmit = async () => {
-      event?.preventDefault()
-      await CompoundInterestService.getDataService(form).then((data) => {
-        dataTable.value = {
-          simulatedData: data.dataTable,
-          simulatedDataFinal: data.dataTableFinal
-        }
+      notification.value = null
+      loading.value = true
+      await CompoundInterestService.getDataService(form)
+        .then((data) => {
+          dataTable.value = {
+            simulatedData: data.dataTable,
+            simulatedDataFinal: data.dataTableFinal
+          }
 
-        dataChart.value = {
-          valueWithIncome: data.dataChart?.valueWithIncome,
-          desiredIncome: data.dataChart?.desiredIncome
-        }
-      })
+          dataChart.value = {
+            valueWithIncome: data.dataChart?.valueWithIncome,
+            desiredIncome: data.dataChart?.desiredIncome
+          }
+          ;(chart.value as typeof ChartCompoundInterest).focus()
+        })
+        .catch((error) => {
+          console.log(error)
+          notification.value = t('compoundInterest.notification.error.fetch') + ` [${error.code}]`
+          ;(alert.value as typeof BAlert).focus()
+        })
+        .finally(() => (loading.value = false))
     }
 
     const onReset = () => {
@@ -90,6 +105,8 @@ export default defineComponent({
       return dataTable.value !== null
     })
 
+    const dismissibleAlert = ref(true)
+
     return {
       form,
       show,
@@ -98,7 +115,11 @@ export default defineComponent({
       onSubmit,
       onReset,
       visibleChart,
-      visibleTable
+      visibleTable,
+      notification,
+      dismissibleAlert,
+      alert,
+      loading
     }
   }
 })

@@ -7,13 +7,13 @@ class ApiService {
   constructor() {
     this.http = axios.create({
       baseURL: 'https://asset-manager-29uu.onrender.com/api',
-      timeout: 1000,
+      timeout: 100000,
       headers: { 'Content-Type': 'application/json' }
     })
   }
 
   static handleError(error: Error) {
-    throw new Error(`Erro na requisição: ${error.message}`, error.response)
+    throw new Error(`Erro na requisição: ${error.message}`, error.response, error.code)
   }
 
   public async post<T>(resource: string, params?: object): Promise<T> {
@@ -21,6 +21,7 @@ class ApiService {
       const response: AxiosResponse<T> = await this.http.post(resource, params)
       return response.data as T
     } catch (error) {
+      console.log(error)
       ApiService.handleError(error as Error)
       return {} as T
     }

@@ -3,8 +3,11 @@ export default class Error {
 
   response: string
 
-  constructor(message: string, response: string) {
+  code: string
+
+  constructor(message: string, response: string, code: string) {
     this.message = message
     this.response = response
+    this.code = code
   }
 }

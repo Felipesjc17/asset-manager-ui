@@ -10,6 +10,11 @@ const router = createRouter({
       name: '',
       redirect: 'compound-interest'
     },
+    {
+      path: '/asset-manager-ui',
+      name: '',
+      redirect: 'compound-interest'
+    },
     // {
     //   path: '/',
     //   name: 'home-component',
