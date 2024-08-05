@@ -1,8 +1,8 @@
 .compound-interest {
   & > .loading {
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: calc(50% - 38px);
+    left: calc(50% - 38px);
     z-index: 99999;
   }
 }

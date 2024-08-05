@@ -11,16 +11,6 @@ const router = createRouter({
       redirect: 'compound-interest'
     },
     {
-      path: '/asset-manager-ui',
-      name: '',
-      redirect: 'compound-interest'
-    },
-    // {
-    //   path: '/',
-    //   name: 'home-component',
-    //   component: HomeComponent
-    // },
-    {
       path: '/compound-interest',
       name: 'compound-interest',
       component: CompoundInterest
