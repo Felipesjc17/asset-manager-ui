@@ -5,6 +5,13 @@
     left: calc(50% - 38px);
     z-index: 99999;
   }
+
+  & > .notification {
+    position: fixed;
+    top: calc(30% - 58px);
+    left: calc(50% - 175px);
+    z-index: 99999;
+  }
 }
 
 .b-form {

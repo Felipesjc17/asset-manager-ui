@@ -1,13 +1,8 @@
 <template>
   <div class="compound-interest">
-    <BAlert
-      class="notification"
-      :model-value="!!notification"
-      variant="danger"
-      dismissible
-      ref="alert"
-      >{{ notification }}</BAlert
-    >
+    <BAlert class="notification" :model-value="!!notification" variant="danger" dismissible>{{
+      notification
+    }}</BAlert>
     <BSpinner v-show="loading" class="loading" variant="info" />
     <header class="d-flex justify-content-around mb-3" variant="secundary">
       <h4>{{ $t('compoundInterest.title') }}</h4>

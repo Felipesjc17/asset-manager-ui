@@ -5,7 +5,6 @@ import FilterCompoundInterest from './components/filter/FilterCompoundInterest.v
 import ChartCompoundInterest from './components/chart/ChartCompoundInterest.vue'
 import TableCompoundInterest from './components/table/TableCompoundInterest.vue'
 import CompoundInterestService from './CompoundInterest.service'
-import { BAlert } from 'bootstrap-vue-next'
 
 interface DataTable {
   simulatedData: object
@@ -26,7 +25,6 @@ export default defineComponent({
   setup() {
     const { t } = useI18n()
 
-    const alert = ref<typeof BAlert | null>(null)
     const loading = ref(false)
 
     const form = reactive({
@@ -53,7 +51,6 @@ export default defineComponent({
     const dataTable = ref<null | DataTable>(null)
     const dataChart = ref<null | DataLines>(null)
     const notification = ref<null | string>(null)
-    const chart = ref<null | typeof ChartCompoundInterest>(null)
 
     const onSubmit = async () => {
       notification.value = null
@@ -69,12 +66,9 @@ export default defineComponent({
             valueWithIncome: data.dataChart?.valueWithIncome,
             desiredIncome: data.dataChart?.desiredIncome
           }
-          ;(chart.value as typeof ChartCompoundInterest).focus()
         })
-        .catch((error) => {
-          console.log(error)
-          notification.value = t('compoundInterest.notification.error.fetch') + ` [${error.code}]`
-          ;(alert.value as typeof BAlert).focus()
+        .catch(() => {
+          notification.value = t('compoundInterest.notification.error.fetch')
         })
         .finally(() => (loading.value = false))
     }
@@ -118,7 +112,6 @@ export default defineComponent({
       visibleTable,
       notification,
       dismissibleAlert,
-      alert,
       loading
     }
   }
